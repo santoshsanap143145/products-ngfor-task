@@ -1,0 +1,106 @@
+<div class="row bordered my-5 pt-4">
+  <div class="col-md-6 prodImg">
+    <img [src]="product.images[0]" alt="" />
+  </div>
+  <div class="col-md-6">
+    <div class="productInfo">
+      <h2 class="my-3 darkBlue">{{ product.title }}</h2>
+      <span class="rating">
+        <ng-container *ngFor="let star of stars">
+          <i
+            class="text-warning"
+            [ngClass]="
+              product.rating >= star
+                ? 'fa-solid fa-star'
+                : product.rating >= star - 0.7
+                ? 'fa-solid fa-star-half-alt'
+                : 'fa-regular fa-star'
+            "
+          ></i>
+        </ng-container>
+        <strong>{{ product.rating }}</strong>
+        <small>({{ product.reviews_count }})</small>
+      </span>
+      <h5 class="text-info mt-2 mb-4">{{ product.total_price }}</h5>
+      <div class="specs mb-4">
+        <p class="m-0" *ngFor="let des of product.product_description">
+          <i class="fa-solid fa-circle-check"></i>
+          <span class="specText">{{ des }}</span>
+        </p>
+      </div>
+      <div class="tags">
+        <span *ngFor="let tag of product.tags">{{ tag }}</span>
+      </div>
+      <div class="addCart mb-5 d-flex align-items-center">
+        <div class="orderCount">
+          <button (click)="reducOnClick()" class="min">
+            <i class="fa-solid fa-minus"></i>
+          </button>
+          <span
+            ><strong>{{ orderCount }}</strong></span
+          >
+          <button (click)="increaseOnClick()" class="plus">
+            <i class="fa-solid fa-plus"></i>
+          </button>
+        </div>
+        <button class="btn btn-md btn-primary adC">
+          <i class="fa-solid fa-cart-plus text-white"></i>Add to Cart
+        </button>
+        <div
+          [ngClass]="{
+            active: favActive
+          }"
+          (click)="this.favActive = !this.favActive"
+          class="fav"
+        >
+          <i class="fa-solid fa-heart fa-2x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-12">
+    <ul class="custom-tabs">
+      <li
+        class="tab-item"
+        [ngClass]="{ active: activeTab === 'details' }"
+        (click)="activeTab = 'details'"
+      >
+        Product Details
+      </li>
+      <li
+        class="tab-item"
+        [ngClass]="{ active: activeTab === 'specs' }"
+        (click)="activeTab = 'specs'"
+      >
+        Specifications
+      </li>
+      <li
+        class="tab-item"
+        [ngClass]="{ active: activeTab === 'return' }"
+        (click)="activeTab = 'return'"
+      >
+        Return Policy
+      </li>
+    </ul>
+
+    <div class="tab-content">
+      <div *ngIf="activeTab === 'details'">
+        <p>{{ product.product_details }}</p>
+      </div>
+
+      <div *ngIf="activeTab === 'specs'">
+        <ul>
+          <li *ngFor="let spec of product.product_specifications">
+            <strong>{{ spec.specification_name }}</strong
+            >: {{ spec.specification_value }}
+          </li>
+        </ul>
+      </div>
+
+      <div *ngIf="activeTab === 'return'">
+        <p>{{ product.return_policy }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+

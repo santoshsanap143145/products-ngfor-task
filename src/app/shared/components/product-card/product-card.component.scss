@@ -1,0 +1,161 @@
+.bordered {
+  border: 1px solid #e9e9e9;
+}
+.prodImg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img {
+    width: 300px;
+    object-fit: cover;
+  }
+}
+
+.darkBlue{
+    color:#032f71;
+}
+.rating {
+  i {
+    color: #986f06;
+  }
+  strong {
+    margin: 0 10px 0 10px;
+    color: gray;
+    font-weight: 700;
+  }
+  small {
+    color: gray;
+    font-weight: 500;
+  }
+}
+
+.specs {
+  i {
+    color: #04b722;
+    margin-right: 10px;
+  }
+  .specText {
+    color: rgb(101, 92, 92);
+    font-weight: 550;
+  }
+}
+
+.tags {
+  margin-bottom: 30px;
+  span {
+    display: inline-block;
+    color: #fff;
+    background-color: #808080;
+    padding: 2px;
+    margin-left: 6px;
+    border-radius: 5px;
+    font-size: 12px;
+    margin-top: 12px;
+    font-weight: 700;
+  }
+}
+
+.addCart {
+  .orderCount {
+    display: flex;
+    align-items: center;
+
+    .min {
+      width: 30px;
+      height: 30px;
+      border-top-left-radius: 8px;
+      border-bottom-left-radius: 8px;
+      border: 2px solid #dedede;
+      i {
+        font-size: 16px;
+        color: #808080;
+      }
+      &:active {
+        background-color: #f99f39;
+        i {
+          color: #000;
+        }
+      }
+    }
+
+    span {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      border: 2px solid #dedede;
+      display: flex;
+      justify-content: center;
+      font-size: 14px;
+      align-items: center;
+      color: #808080;
+    }
+
+    .plus {
+      width: 30px;
+      height: 30px;
+      border-top-right-radius: 8px;
+      border-bottom-right-radius: 8px;
+      border: 2px solid #dedede;
+      i {
+        font-size: 16px;
+        color: #808080;
+      }
+      &:active {
+        background-color: #f99f39;
+        i {
+          color: #000;
+        }
+      }
+    }
+  }
+  .adC {
+    margin-left: 16px;
+    font-size: 12px;
+  }
+
+  .fav {
+    margin-left: 20px;
+    i {
+      font-size: 35px;
+      color: #d8d5d5;
+    }
+  }
+
+  .fav.active {
+    i {
+      color: #f73c71;
+    }
+  }
+}
+
+.custom-tabs {
+  list-style: none;
+  display: flex;
+}
+
+.tab-item {
+  cursor: pointer;
+  font-weight: 700;
+  color: #555;
+  border-bottom: 3px solid transparent;
+  transition: all 0.3s ease;
+  padding: 8px;
+  margin-right: 12px;
+}
+
+.tab-item:is(:hover, :active, :focus) {
+  color: #0d6efd;
+  border-color: #0d6efd;
+}
+
+.tab-item.active {
+  color: #0d6efd;
+  border-color: #0d6efd;
+}
+
+.tab-content{
+    margin-bottom: 20px;
+    border: 2px solid #efefef;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+}

@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Iproduct } from './shared/models/product';
+import { productArr } from './shared/const/products';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'products-ngfor-task';
+  productArr : Array<Iproduct> = productArr;
+  
 }
