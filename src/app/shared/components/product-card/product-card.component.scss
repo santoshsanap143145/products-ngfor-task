@@ -115,7 +115,6 @@
     padding: 4px;
     i {
       margin-right: 9px !important;
-
     }
   }
 
@@ -164,4 +163,21 @@
   border: 2px solid #efefef;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   padding: 20px;
+  p {
+    color: #808080;
+    font-weight: 500;
+  }
+  ul {
+    li {
+      color: #706ee9;
+      font-weight: 500;
+      &::marker {
+        color: #959292;
+      }
+      strong {
+        color: #959292;
+        font-weight: 700;
+      }
+    }
+  }
 }
